@@ -1,4 +1,3 @@
-"use client"
 import { Product } from '@prisma/client';
 import Card from '../ui/Card';
 

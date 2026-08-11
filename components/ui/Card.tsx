@@ -1,3 +1,5 @@
+"use client"
+
 import { formatCurrency } from '@/app/utils/format';
 import Link from 'next/link';
 import Image from 'next/image';
