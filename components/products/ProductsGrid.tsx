@@ -15,24 +15,22 @@ function ProductsGrid({ products }: { products: Product[] }) {
             <article key={productId} className='group relative'>
                 <Link href={`products/${productId}`}>
 
-                <div className="relative rounded-md shadow-md p-4 flex flex-col justify-center items-center hover:shadow-2xl duration-500 transition-shadow">
-            <div className="w-full h-[200]">
-                <img 
-
-                    src={product.image}
-                    alt={`name`}
-                    className="rounded-sm object-cover w-full h-full "
-                />
-            </div>  
-            <div className="flex justify-center items-center flex-col gap-2 mt-2">
-                <h3 className="text-xl capitalize">{product.name}</h3>
-                <span className="text-muted-foreground font-bold">{dollarsAmount}</span>
-            </div>
-            <div className="absolute top-7 right-7">
-                <FavoriteToggleButton />
-            </div>
-        </div>
-
+                    <div className="relative rounded-md shadow-md p-4 flex flex-col justify-center items-center hover:shadow-2xl duration-500 transition-shadow">
+                        <div className="w-full h-[200]">
+                            <img 
+                                src={product.image}
+                                alt={`name`}
+                                className="rounded-sm object-cover w-full h-full "
+                            />
+                        </div>  
+                        <div className="flex justify-center items-center flex-col gap-2 mt-2">
+                            <h3 className="text-xl capitalize">{product.name}</h3>
+                            <span className="text-muted-foreground font-bold">{dollarsAmount}</span>
+                        </div>
+                        <div className="absolute top-7 right-7">
+                        <FavoriteToggleButton productId={productId} />       
+                        </div>
+                     </div>
                 </Link>
             </article>
         );
