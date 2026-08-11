@@ -17,4 +17,3 @@ export const fetchAllProducts = () => {
     },
   });
 };
-console.log(fetchAllProducts);

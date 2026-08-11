@@ -7,11 +7,10 @@ import ProductsGrid from '../products/ProductsGrid';
 
 async function FeaturedProducts() {
     const products = await fetchFeaturedProducts();
-    console.log(products);
-    
-    // if (products.length === 0) {
-    //     return <EmptyList />
-    // }
+        
+    if (products.length === 0) {
+        return <EmptyList />
+    }
     return (
             <section className="-mt-10">
                 <SectionTitle text='featured products' />

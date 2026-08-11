@@ -9,7 +9,7 @@ function LinksDropdown() {
         <LuAlignLeft />
       </button>
       <div className=" shadow-sm border border-border bg-card text-card-foreground transition-all rounded-sm w-30 sm:w-50 
-      text-sm overflow-hidden hidden group-focus-within:block absolute top-12 right-0">
+      text-sm overflow-hidden hidden group-focus-within:block absolute top-12 right-0 z-10">
           {links.map((link) => (
             <Link 
               key={link.href}

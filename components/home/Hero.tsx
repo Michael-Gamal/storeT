@@ -3,7 +3,7 @@ import Link from 'next/link';
 import HeroCarousel from './HeroCarousel';
 function Hero() {
     return (
-        <section className="flex lg:flex-row justify-center h-[550] ">
+        <section className="flex lg:flex-row justify-center h-137 ">
             {/* Description */}
             <div className="flex flex-1 flex-col">
                 {/* text */}

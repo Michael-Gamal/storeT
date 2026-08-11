@@ -11,14 +11,15 @@ function FavoriteToggleButton({
         type="button"
         className="
           w-9 h-9
-          border border-gray-300
-          bg-white
           cursor-pointer
           flex items-center justify-center
-          hover:bg-gray-100
           transition
           font-bold
           rounded-sm
+          bg-background
+          hover:text-accent-foreground
+          border border-input
+          hover:bg-accent hover:text-accent-foreground
         "
         onClick={() => console.log(productId)}
       >
