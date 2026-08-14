@@ -1,7 +1,9 @@
 import React from 'react';
 
 type ButtonProps = {
-  children: React.ReactElement;
+  children: React.ReactElement<{
+    className?: string;
+  }>;
   variant?: 'default' | 'ghost';
   size?: 'default' | 'icon';
   asChild?: boolean;
@@ -18,8 +20,8 @@ export default function Button({
 
   const variantStyles =
     variant === 'default'
-      ? 'bg-black text-white hover:bg-neutral-800'
-      : 'hover:bg-gray-100';
+      ? 'bg-primary text-muted '
+      : 'bg-transparent text-gray-700 hover:bg-gray-100';
 
   const sizeStyles =
     size === 'icon'
@@ -29,8 +31,12 @@ export default function Button({
   const className = `${baseStyles} ${variantStyles} ${sizeStyles}`;
 
   if (asChild) {
-    return React.cloneElement(children, {
-      className: `${className} ${children.props.className || ''}`,
+    const child = children as React.ReactElement<{
+      className?: string;
+    }>;
+
+    return React.cloneElement(child, {
+      className: `${className} ${child.props.className ?? ''}`,
     });
   }
 
