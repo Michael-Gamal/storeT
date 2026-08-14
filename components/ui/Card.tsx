@@ -8,6 +8,7 @@ import FavoriteToggleButton from '../products/FavoriteToggleButton';
 
 function Card({ product }: { product: Product }) {
   const { name, price, image, id: productId } = product;
+  console.log('productId:', productId);
   const dollarsAmount = formatCurrency(price);
 
   return (
