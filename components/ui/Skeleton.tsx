@@ -1,4 +1,4 @@
-function Skeleton({ className } : {className: '' | string}) {
+function Skeleton({ className } : {className: string}) {
     return (
       <div
         className={`
