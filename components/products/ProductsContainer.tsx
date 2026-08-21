@@ -8,7 +8,7 @@ async function ProductsContainer({layout,search }: {
     layout?: string;
     search?: string 
 }) {
-    const products =await fetchAllProducts();
+    const products = await fetchAllProducts({ search });
     const totalProducts = products.length;
     const searchTerm = search ? `&search=${search}` : '';
     return (
@@ -39,6 +39,7 @@ async function ProductsContainer({layout,search }: {
                         </Button>
                     </div>
                 </div>
+                <hr className="border-gray-300 my-6" />
             </section>
             {/* PRODUCTS */}
             <div>

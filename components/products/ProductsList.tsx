@@ -1,11 +1,14 @@
+
 import { Product } from '@prisma/client';
+import CardList from '../ui/CardList';
 
-function ProductsList({
-  products,
-}: {
-  products: Product[];
-}) {
-  return <h1>ProductsList ({products.length})</h1>;
+function ProductsList({ products }: { products: Product[] }) {
+  return (
+    <div className="pt-12 grid gap-4 grid-12">
+      {products.map((product) => (
+        <CardList key={product.id} product={product} />
+      ))}
+    </div>
+  );
 }
-
 export default ProductsList;
