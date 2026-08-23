@@ -1,3 +1,4 @@
+"use client";
 import { IoIosHeartEmpty,IoIosHeart } from "react-icons/io";
 
 
