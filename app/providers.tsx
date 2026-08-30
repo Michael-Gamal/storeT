@@ -1,16 +1,19 @@
 'use client';
+import { ToastProvider } from '@/components/ui/ToastContext';
 import { ThemeProvider } from './theme-provider';
 
 function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      attribute='class'
-      defaultTheme='system'
-      enableSystem
-      disableTransitionOnChange
-    >
-      {children}
-    </ThemeProvider>
+    <ToastProvider>
+      <ThemeProvider
+        attribute='class'
+        defaultTheme='system'
+        enableSystem
+        disableTransitionOnChange
+        >
+        {children}
+      </ThemeProvider>
+    </ToastProvider>
   );
 }
 export default Providers;
