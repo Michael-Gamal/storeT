@@ -1,30 +1,33 @@
-import React from 'react';
+import React from "react";
 
-type ButtonProps = {
-  children: React.ReactNode;
-  variant?: 'default' | 'ghost';
-  size?: 'default' | 'icon';
+type ButtonProps = React.ComponentProps<"button"> & {
+  variant?: "default" | "ghost";
+  size?: "default" | "lg" | "icon";
   asChild?: boolean;
-  className?: string;
 };
 
 export default function Button({
   children,
-  variant = 'default',
-  size = 'default',
+  variant = "default",
+  size = "default",
   asChild = false,
-  className: customClassName = '',
+  className: customClassName = "",
+  ...props
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center rounded-md transition-colors';
+    "inline-flex items-center justify-center rounded-md transition-colors";
 
   const variantStyles =
-    variant === 'default'
-      ? 'bg-primary text-muted'
-      : 'bg-transparent text-gray-700 hover:bg-gray-100';
+    variant === "default"
+      ? "bg-primary text-muted"
+      : "bg-transparent text-gray-700 hover:bg-gray-100";
 
   const sizeStyles =
-    size === 'icon' ? 'h-10 w-10' : 'h-10 px-4 py-2';
+    size === "icon"
+      ? "h-10 w-10"
+      : size === "lg"
+        ? "h-12 px-6 py-3"
+        : "h-10 px-4 py-2";
 
   const className = `${baseStyles} ${variantStyles} ${sizeStyles} ${customClassName}`;
 
@@ -34,9 +37,13 @@ export default function Button({
     }>;
 
     return React.cloneElement(child, {
-      className: `${className} ${child.props.className ?? ''}`,
+      className: `${className} ${child.props.className ?? ""}`,
     });
   }
 
-  return <button className={className}>{children}</button>;
+  return (
+    <button className={className} {...props}>
+      {children}
+    </button>
+  );
 }
